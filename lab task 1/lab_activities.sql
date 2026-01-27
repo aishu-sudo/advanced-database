@@ -66,3 +66,5 @@ begin
    dbms_output.put_line('Total number of digits: ' || digit_count);
 end;
 /
+
+
