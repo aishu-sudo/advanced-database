@@ -88,5 +88,4 @@ IF SQL%NOTFOUND THEN
     END IF;
 END;
 
-select *
-  from employee;
+select * from employee;
