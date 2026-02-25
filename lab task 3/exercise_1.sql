@@ -67,5 +67,4 @@
 -- close c_employee;
 -- end;
 
-select *
-  from employee;
+select * from employee;
