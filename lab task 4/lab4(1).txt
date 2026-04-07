@@ -1,0 +1,368 @@
+
+E:\CSE464\advanced-database>cd "lab task 4"
+
+E:\CSE464\advanced-database\lab task 4>sqlplus
+E:\CSE464\advanced-database\lab task 4>sqlplus
+
+SQL*Plus: Release 21.0.0.0.0 - Production on Sat Apr 4 15:53:00 2026
+Version 21.3.0.0.0
+
+Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+
+
+Enter user-name: system
+Enter password:
+Last Successful login time: Sat Apr 04 2026 11:28:08 +06:00
+
+Connected to:
+Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+
+SQL> @lab_task.sql
+
+Table dropped.
+
+SQL> @lab_task.sql
+
+Table created.
+
+SQL> @lab_task.sql
+
+Procedure created.
+
+SQL> EXEC insert_student(1, 'Rahim', 5000, 2, 'CSE');
+
+PL/SQL procedure successfully completed.
+
+SQL> @lab_task.sql
+
+Procedure created.
+
+SQL> VARIABLE v_fee NUMBER;
+SQL> 
+SQL> EXEC update_fee(1, 500, :v_fee);
+
+PL/SQL procedure successfully completed.
+
+SQL>
+SQL> PRINT v_fee;
+
+     V_FEE
+----------
+      5500
+
+SQL> @lab_task.sql
+
+Procedure created.
+
+
+SQL> SELECT calculate_scholarship(1, 5000) FROM dual;
+
+CALCULATE_SCHOLARSHIP(1,5000)
+-----------------------------
+                          750
+
+SQL> @lab_task.sql
+
+Procedure created.
+
+SQL> @lab_task.sql
+ 10  /
+
+Warning: Trigger created with compilation errors.
+
+SQL> @lab_task.sql
+
+Warning: Trigger created with compilation errors.
+
+SQL> @lab_task.sql
+DELETE FROM students
+            *
+ERROR at line 1:
+ORA-04098: trigger 'SYSTEM.T1' is invalid and failed re-validation
+
+
+SQL> @lab_task.sql
+DELETE FROM students
+            *
+ERROR at line 1:
+ORA-04098: trigger 'SYSTEM.T1' is invalid and failed re-validation
+
+
+SQL> @lab_task.sql
+
+STUDENT_ID NAME                                               SEMESTER_FEE
+---------- -------------------------------------------------- ------------
+CURRENT_SEMESTER DEPT_NAME
+---------------- --------------------------------------------------
+         1 Rahim                                                      5500
+               2 CSE
+
+
+SQL> @lab_task.sql
+
+STUDENT_ID NAME                                               SEMESTER_FEE
+---------- -------------------------------------------------- ------------
+CURRENT_SEMESTER DEPT_NAME
+---------------- --------------------------------------------------
+         1 Rahim                                                      5500
+               2 CSE
+
+
+
+SQL> @lab_task.sql
+SQL> @lab_task.sql
+DELETE FROM students
+DELETE FROM students
+            *
+            *
+ERROR at line 1:
+ERROR at line 1:
+ORA-04098: trigger 'SYSTEM.T1' is invalid and failed re-validation
+ORA-04098: trigger 'SYSTEM.T1' is invalid and failed re-validation
+
+
+
+SQL> @lab_task.sql
+DROP TABLE backup_students
+           *
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> @lab_task.sql
+ALTER TRIGGER backup_before_delete COMPILE
+*
+ERROR at line 1:
+ORA-04080: trigger 'BACKUP_BEFORE_DELETE' does not exist
+
+
+SQL> @lab_task.sql
+
+Table created.
+
+SQL> @lab_task.sql
+ 11  /
+
+Trigger created.
+
+SQL> @lab_task.sql
+
+1 row deleted.
+
+SQL> @lab_task.sql
+
+STUDENT_ID
+----------
+NAME
+--------------------------------------------------------------------------------
+SEMESTER_FEE CURRENT_SEMESTER
+------------ ----------------
+DEPT_NAME
+--------------------------------------------------------------------------------
+DELETED_A DELETED_BY
+--------- --------------------------------------------------      
+         1
+Rahim
+        5500                2
+
+STUDENT_ID
+----------
+NAME
+--------------------------------------------------------------------------------
+SEMESTER_FEE CURRENT_SEMESTER
+------------ ----------------
+------------ ----------------
+DEPT_NAME
+DEPT_NAME
+--------------------------------------------------------------------------------------------------------------------------------------------------
+DELETED_A DELETED_BY
+--------- --------------------------------------------------      
+CSE
+04-APR-26 SYSTEM
+
+
+SQL> @lab_task.sql
+CREATE or REPLACE TRIGGER t2
+                          *
+ERROR at line 1:
+ORA-04095: trigger 'T2' already exists on another table, cannot replace it
+CSE
+04-APR-26 SYSTEM
+
+
+SQL> @lab_task.sql
+CREATE or REPLACE TRIGGER t2
+                          *
+ERROR at line 1:
+ORA-04095: trigger 'T2' already exists on another table, cannot reCSE
+04-APR-26 SYSTEM
+
+
+SQL> @lab_task.sql
+CREATE or REPLACE TRIGGER t2
+                          *
+ERROR at line 1:
+CSE
+04-APR-26 SYSTEM
+
+
+SQL> @lab_task.sql
+CREATE or REPLACE TRIGGER t2
+CSE
+04-APR-26 SYSTEM
+
+
+SQL> @lab_task.sql
+CSE
+04-APR-26 SYSTEM
+CSE
+04-APR-26 SYSTEM
+CSE
+04-APR-26 SYSTEM
+04-APR-26 SYSTEM
+
+
+
+SQL> @lab_task.sql
+CREATE or REPLACE TRIGGER t2
+                          *
+ERROR at line 1:
+ORA-04095: trigger 'T2' already exists on another table, cannot replace it
+
+
+SQL> @lab_task.sql
+CREATE or REPLACE TRIGGER t2
+                          *
+ERROR at line 1:
+ORA-04095: trigger 'T2' already exists on another table, cannot replace it
+
+
+SQL> @lab_task.sql
+CREATE or REPLACE TRIGGER t2
+                          *
+ERROR at line 1:
+ORA-04095: trigger 'T2' already exists on another table, cannot replace it
+
+
+SQL> @lab_task.sql
+CREATE or REPLACE TRIGGER t3
+                          *
+ERROR at line 1:
+ORA-04095: trigger 'T3' already exists on another table, cannot replace it
+
+
+SQL> @lab_task.sql
+
+Trigger dropped.
+
+SQL> @lab_task.sql
+CREATE or REPLACE TRIGGER t3
+                          *
+ERROR at line 1:
+ORA-04095: trigger 'T3' already exists on another table, cannot replace it
+
+
+SQL> @lab_task.sql
+
+Trigger created.
+
+SQL> @lab_task.sql
+
+0 rows updated.
+
+SQL> @lab_task.sql
+
+STUDENT_ID
+----------
+NAME
+--------------------------------------------------------------------------------
+SEMESTER_FEE CURRENT_SEMESTER
+------------ ----------------
+DEPT_NAME
+--------------------------------------------------------------------------------
+DELETED_A DELETED_BY
+--------- --------------------------------------------------      
+         1
+Rahim
+        5500                2
+
+STUDENT_ID
+----------
+NAME
+--------------------------------------------------------------------------------
+SEMESTER_FEE CURRENT_SEMESTER
+------------ ----------------
+DEPT_NAME
+--------------------------------------------------------------------------------
+DELETED_A DELETED_BY
+--------- --------------------------------------------------      
+CSE
+04-APR-26 SYSTEM
+
+
+SQL> @lab_task.sql
+
+1 row created.
+
+SQL> @lab_task.sql
+
+1 row updated.
+
+SQL> @lab_task.sql
+
+STUDENT_ID
+----------
+NAME
+--------------------------------------------------------------------------------
+SEMESTER_FEE CURRENT_SEMESTER
+------------ ----------------
+DEPT_NAME
+--------------------------------------------------------------------------------
+DELETED_A DELETED_BY
+--------- --------------------------------------------------      
+         1
+Rahim
+        5500                2
+
+STUDENT_ID
+----------
+NAME
+--------------------------------------------------------------------------------
+SEMESTER_FEE CURRENT_SEMESTER
+------------ ----------------
+DEPT_NAME
+--------------------------------------------------------------------------------
+DELETED_A DELETED_BY
+--------- --------------------------------------------------      
+CSE
+04-APR-26 SYSTEM
+
+
+STUDENT_ID
+----------
+NAME
+--------------------------------------------------------------------------------
+SEMESTER_FEE CURRENT_SEMESTER
+------------ ----------------
+DEPT_NAME
+--------------------------------------------------------------------------------
+DELETED_A DELETED_BY
+--------- --------------------------------------------------      
+         1
+Aishu
+       50000                4
+
+STUDENT_ID
+----------
+NAME
+--------------------------------------------------------------------------------
+SEMESTER_FEE CURRENT_SEMESTER
+------------ ----------------
+DEPT_NAME
+--------------------------------------------------------------------------------
+DELETED_A DELETED_BY
+--------- --------------------------------------------------      
+Computer Science
+04-APR-26 SYSTEM

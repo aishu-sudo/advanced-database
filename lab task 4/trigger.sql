@@ -67,3 +67,5 @@
 
 -- delete from employee where e_id = 3;
 select * from backup_emp;
+
+
